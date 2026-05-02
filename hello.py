@@ -1,5 +1,8 @@
-name = input("What is your name? ")
-print("Hi,", name)
+#nested loop
 
-age = int(input("How old are you? "))
-print("Next year you will be", age + 1)
+for i in range(5):
+    sum = 0
+    for j in range(1, i+2):
+        sum = sum + j
+        print(j, end = " ")
+    print(" = ", sum)
