@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qurbani Eid Salami</title>
+  <title>Qurbani Eid Salami Court</title>
 
   <style>
     * {
@@ -16,78 +16,83 @@
       min-height: 100vh;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px;
+      justify-content: center;
       text-align: center;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255, 215, 120, 0.35), transparent 25%),
-        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.25), transparent 20%),
-        linear-gradient(135deg, #12372a, #1f6f50, #d6a84f);
+      padding: 18px;
       overflow: hidden;
-      color: #1b1b1b;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255, 236, 179, 0.8), transparent 20%),
+        radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.22), transparent 18%),
+        linear-gradient(135deg, #0f3d2e 0%, #1f7a53 45%, #d6a84f 100%);
+      color: #173526;
     }
 
-    .moon {
+    .eid-moon {
       position: absolute;
-      top: 45px;
-      right: 45px;
-      width: 70px;
-      height: 70px;
-      background: #fff4c2;
+      top: 36px;
+      right: 38px;
+      width: 75px;
+      height: 75px;
+      background: #fff2b8;
       border-radius: 50%;
-      box-shadow: 0 0 40px rgba(255, 244, 194, 0.8);
+      box-shadow: 0 0 35px rgba(255, 242, 184, 0.8);
+      z-index: 1;
     }
 
-    .moon::after {
+    .eid-moon::after {
       content: "";
       position: absolute;
-      top: -2px;
-      right: -12px;
-      width: 70px;
-      height: 70px;
-      background: #1f6f50;
+      top: -4px;
+      right: -18px;
+      width: 75px;
+      height: 75px;
+      background: #1f7a53;
       border-radius: 50%;
     }
 
-    .floating {
+    .money {
       position: absolute;
-      font-size: 26px;
-      opacity: 0.25;
-      animation: float 5s ease-in-out infinite;
+      top: -60px;
+      font-size: 28px;
+      animation: moneyFall 8s linear infinite;
+      opacity: 0.85;
+      z-index: 1;
     }
 
-    .f1 { top: 14%; left: 8%; animation-delay: 0s; }
-    .f2 { bottom: 15%; left: 10%; animation-delay: 1s; }
-    .f3 { top: 28%; right: 8%; animation-delay: 2s; }
-    .f4 { bottom: 12%; right: 12%; animation-delay: 1.5s; }
+    .m1 { left: 8%; animation-delay: 0s; }
+    .m2 { left: 22%; animation-delay: 2s; }
+    .m3 { left: 70%; animation-delay: 1s; }
+    .m4 { left: 88%; animation-delay: 3s; }
+    .m5 { left: 48%; animation-delay: 4.2s; }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
+    @keyframes moneyFall {
+      0% {
+        transform: translateY(-80px) rotate(0deg);
       }
-      50% {
-        transform: translateY(-18px) rotate(8deg);
+      100% {
+        transform: translateY(115vh) rotate(360deg);
       }
     }
 
     .card {
-      width: 100%;
-      max-width: 410px;
-      background: #fffaf0;
-      border-radius: 32px;
-      padding: 28px 24px 25px;
       position: relative;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.32);
-      border: 3px solid #f3d27a;
+      z-index: 3;
+      width: 100%;
+      max-width: 430px;
+      background: #fff9e9;
+      border-radius: 34px;
+      padding: 24px 22px 26px;
+      border: 4px solid #f1cd72;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
       overflow: hidden;
-      animation: cardIn 0.7s ease;
+      animation: cardEntry 0.7s ease;
     }
 
-    @keyframes cardIn {
+    @keyframes cardEntry {
       from {
         opacity: 0;
-        transform: translateY(25px) scale(0.95);
+        transform: translateY(30px) scale(0.94);
       }
       to {
         opacity: 1;
@@ -96,144 +101,235 @@
     }
 
     .card::before {
-      content: "";
+      content: "EID SALAMI";
       position: absolute;
-      width: 180px;
-      height: 180px;
-      background: rgba(31, 111, 80, 0.08);
-      border-radius: 50%;
-      top: -70px;
-      left: -70px;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      background: rgba(214, 168, 79, 0.14);
-      border-radius: 50%;
-      bottom: -70px;
-      right: -70px;
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #12372a;
+      top: 48px;
+      left: -35px;
+      background: #173526;
       color: #ffe9a3;
-      padding: 8px 16px;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 7px 40px;
+      transform: rotate(-40deg);
+      letter-spacing: 1px;
+    }
+
+    .ticket-top {
+      display: inline-block;
+      background: #173526;
+      color: #ffe9a3;
+      padding: 8px 17px;
       border-radius: 30px;
       font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 0 #d6a84f;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #173526;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: #397357;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 15px;
-      letter-spacing: 0.4px;
+      line-height: 1.5;
+      margin-bottom: 14px;
     }
 
-    .cow-face {
-      width: 112px;
-      height: 92px;
-      background: #fff;
-      border: 3px solid #12372a;
-      border-radius: 50% 50% 45% 45%;
-      margin: 0 auto 15px;
+    .cow-area {
       position: relative;
-      box-shadow: 0 10px 0 #e8d5a2;
-      animation: moo 2.8s ease-in-out infinite;
+      height: 150px;
+      margin: 8px 0 12px;
     }
 
-    @keyframes moo {
-      0%, 100% {
-        transform: rotate(-2deg);
-      }
-      50% {
-        transform: rotate(2deg) translateY(-3px);
-      }
+    .speech {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      color: #173526;
+      border: 2px solid #173526;
+      padding: 9px 14px;
+      border-radius: 18px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      box-shadow: 0 6px 0 rgba(23, 53, 38, 0.13);
+      animation: speechPop 1.8s ease-in-out infinite;
+      white-space: nowrap;
     }
 
-    .cow-face::before,
-    .cow-face::after {
+    .speech::after {
       content: "";
       position: absolute;
-      top: 18px;
-      width: 28px;
-      height: 28px;
+      bottom: -10px;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      background: #ffffff;
+      border-right: 2px solid #173526;
+      border-bottom: 2px solid #173526;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    @keyframes speechPop {
+      0%, 100% {
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) scale(1.06);
+      }
+    }
+
+    .cow {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 135px;
+      height: 95px;
+      transform: translateX(-50%);
+      animation: cowDance 2.2s ease-in-out infinite;
+    }
+
+    @keyframes cowDance {
+      0%, 100% {
+        transform: translateX(-50%) rotate(-3deg);
+      }
+      50% {
+        transform: translateX(-50%) translateY(-8px) rotate(3deg);
+      }
+    }
+
+    .cow-head {
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      transform: translateX(-50%);
+      width: 105px;
+      height: 82px;
+      background: #ffffff;
+      border: 3px solid #173526;
+      border-radius: 48% 48% 42% 42%;
+      box-shadow: 0 9px 0 #ead9a9;
+    }
+
+    .patch {
+      position: absolute;
       background: #2b2b2b;
       border-radius: 50%;
     }
 
-    .cow-face::before {
-      left: 18px;
-      transform: rotate(-15deg);
+    .patch.one {
+      width: 28px;
+      height: 30px;
+      left: 13px;
+      top: 16px;
+      transform: rotate(-20deg);
     }
 
-    .cow-face::after {
-      right: 16px;
-      transform: rotate(15deg);
+    .patch.two {
+      width: 23px;
+      height: 25px;
+      right: 13px;
+      top: 14px;
+      transform: rotate(20deg);
     }
 
     .horn {
       position: absolute;
-      top: -18px;
-      width: 24px;
-      height: 28px;
+      top: -17px;
+      width: 23px;
+      height: 30px;
       background: #d6a84f;
-      border-radius: 50% 50% 10% 10%;
-      border: 2px solid #12372a;
+      border: 3px solid #173526;
+      border-radius: 50% 50% 12% 12%;
+      z-index: -1;
     }
 
     .horn.left {
-      left: 18px;
+      left: 17px;
       transform: rotate(-25deg);
     }
 
     .horn.right {
-      right: 18px;
+      right: 17px;
+      transform: rotate(25deg);
+    }
+
+    .ear {
+      position: absolute;
+      top: 22px;
+      width: 25px;
+      height: 32px;
+      background: #f3c5b7;
+      border: 3px solid #173526;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .ear.left {
+      left: -17px;
+      transform: rotate(-25deg);
+    }
+
+    .ear.right {
+      right: -17px;
       transform: rotate(25deg);
     }
 
     .eye {
       position: absolute;
-      top: 38px;
+      top: 39px;
       width: 9px;
       height: 9px;
       background: #111;
       border-radius: 50%;
+      animation: blink 3.5s infinite;
     }
 
     .eye.left {
-      left: 42px;
+      left: 36px;
     }
 
     .eye.right {
-      right: 42px;
+      right: 36px;
+    }
+
+    @keyframes blink {
+      0%, 92%, 100% {
+        transform: scaleY(1);
+      }
+      95% {
+        transform: scaleY(0.1);
+      }
     }
 
     .nose {
       position: absolute;
-      width: 45px;
-      height: 25px;
-      background: #f6b6b6;
       left: 50%;
-      bottom: 10px;
+      bottom: 8px;
       transform: translateX(-50%);
+      width: 48px;
+      height: 28px;
+      background: #f7b5b5;
+      border: 3px solid #173526;
       border-radius: 50px;
-      border: 2px solid #12372a;
     }
 
     .nose::before,
     .nose::after {
       content: "";
       position: absolute;
+      top: 10px;
       width: 6px;
       height: 6px;
-      background: #12372a;
+      background: #173526;
       border-radius: 50%;
-      top: 9px;
     }
 
     .nose::before {
@@ -244,108 +340,127 @@
       right: 12px;
     }
 
-    h1 {
-      font-size: 2.1rem;
-      color: #12372a;
-      margin-bottom: 8px;
-      line-height: 1.2;
-    }
-
-    h2 {
-      font-size: 1.08rem;
-      color: #32634c;
-      font-weight: 600;
-      line-height: 1.6;
-      margin-bottom: 18px;
-    }
-
-    .joke-box {
-      background: #fff3cf;
+    .case-box {
+      background: #fff1c7;
       border: 2px dashed #d6a84f;
       border-radius: 20px;
       padding: 14px;
-      font-size: 0.95rem;
-      color: #704b00;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      margin: 15px 0;
+      text-align: left;
+      color: #604200;
+    }
+
+    .case-box p {
+      font-size: 0.93rem;
+      line-height: 1.65;
+      margin: 3px 0;
+      font-weight: 600;
+    }
+
+    .case-box b {
+      color: #173526;
     }
 
     .number-box {
       background: #ecfff4;
-      border: 2px solid #c5ead5;
+      border: 2px solid #b7e6cb;
       border-radius: 22px;
-      padding: 16px;
-      margin-bottom: 18px;
+      padding: 15px;
+      margin: 17px 0;
+      position: relative;
     }
 
     .number-label {
-      color: #4e665b;
-      font-size: 0.85rem;
-      margin-bottom: 6px;
+      color: #557366;
+      font-size: 0.82rem;
+      margin-bottom: 5px;
+      font-weight: 700;
     }
 
     .number {
+      color: #173526;
       font-size: 1.35rem;
-      font-weight: 800;
-      color: #12372a;
+      font-weight: 900;
       letter-spacing: 0.5px;
     }
 
-    button {
+    .copy-btn {
       width: 100%;
       border: none;
-      padding: 15px 20px;
       border-radius: 50px;
-      background: linear-gradient(135deg, #12372a, #1f6f50);
-      color: #fff;
-      font-size: 1.05rem;
-      font-weight: 800;
+      padding: 15px 18px;
+      background: linear-gradient(135deg, #173526, #248258);
+      color: white;
+      font-size: 1.02rem;
+      font-weight: 900;
       cursor: pointer;
-      box-shadow: 0 12px 24px rgba(18, 55, 42, 0.35);
+      box-shadow: 0 12px 25px rgba(23, 53, 38, 0.36);
       transition: 0.3s;
     }
 
-    button:hover {
+    .copy-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 30px rgba(18, 55, 42, 0.45);
-      background: linear-gradient(135deg, #0c261d, #185c42);
+      box-shadow: 0 16px 35px rgba(23, 53, 38, 0.45);
     }
 
-    button:active {
-      transform: scale(0.98);
+    .copy-btn:active {
+      transform: scale(0.97);
     }
 
     .note {
-      margin-top: 14px;
-      color: #607267;
+      margin-top: 13px;
       font-size: 0.82rem;
+      color: #61756a;
       line-height: 1.5;
     }
 
-    .status {
-      margin-top: 15px;
-      min-height: 24px;
-      font-size: 0.92rem;
+    .result {
+      margin-top: 14px;
+      min-height: 26px;
       color: #c46b00;
-      font-weight: 700;
+      font-size: 0.92rem;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .confetti {
+      position: fixed;
+      font-size: 26px;
+      pointer-events: none;
+      z-index: 999;
+      animation: confettiFly 1.2s ease forwards;
+    }
+
+    @keyframes confettiFly {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-120px) scale(1.5) rotate(220deg);
+      }
     }
 
     @media (max-width: 430px) {
       .card {
-        padding: 25px 20px;
+        padding: 22px 18px 24px;
       }
 
       h1 {
-        font-size: 1.85rem;
+        font-size: 1.75rem;
       }
 
-      h2 {
-        font-size: 1rem;
+      .subtitle {
+        font-size: 0.93rem;
       }
 
-      .cow-face {
-        width: 102px;
-        height: 86px;
+      .speech {
+        font-size: 0.8rem;
+      }
+
+      .case-box p {
+        font-size: 0.86rem;
       }
     }
   </style>
@@ -353,78 +468,136 @@
 
 <body>
 
-  <div class="moon"></div>
+  <div class="eid-moon"></div>
 
-  <div class="floating f1">🐄</div>
-  <div class="floating f2">💸</div>
-  <div class="floating f3">🌙</div>
-  <div class="floating f4">✨</div>
+  <div class="money m1">💸</div>
+  <div class="money m2">💰</div>
+  <div class="money m3">💸</div>
+  <div class="money m4">💰</div>
+  <div class="money m5">💸</div>
 
   <div class="card">
-    <div class="content">
+    <div class="ticket-top">কুরবানি ঈদ সালামি কোর্ট</div>
 
-      <div class="badge">Qurbani Eid Salami Booth</div>
+    <h1>Eid Mubarak! 🌙</h1>
 
-      <div class="cow-face">
-        <div class="horn left"></div>
-        <div class="horn right"></div>
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="nose"></div>
+    <p class="subtitle">
+      সালামি না দিলে আজকে মামলার শুনানি হবে! 😄🤷‍♂️
+    </p>
+
+    <div class="cow-area">
+      <div class="speech" id="cowSpeech">মুউউ... সালামি কই?</div>
+
+      <div class="cow">
+        <div class="cow-head">
+          <div class="horn left"></div>
+          <div class="horn right"></div>
+          <div class="ear left"></div>
+          <div class="ear right"></div>
+          <div class="patch one"></div>
+          <div class="patch two"></div>
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="nose"></div>
+        </div>
       </div>
-
-      <h1>Eid Mubarak! 🌙</h1>
-
-      <h2>
-        কুরবানির ঈদে সালামি না দিলে,<br>
-        গরু ভাই কিন্তু সাক্ষী থাকবে! 🐮
-      </h2>
-
-      <div class="joke-box">
-        “গরু কুরবানি হয়ে গেছে,<br>
-        এখন সালামির কুরবানি বাকি!” 😜
-      </div>
-
-      <div class="number-box">
-        <div class="number-label">bKash Salami Number</div>
-        <div class="number" id="displayNumber">01608426185</div>
-      </div>
-
-      <button onclick="copyNumber()">Copy bKash Number 💸</button>
-
-      <p class="note">
-        বাটনে ক্লিক করলে নম্বর কপি হবে। তারপর bKash app থেকে সালামি পাঠিয়ে দিন।
-      </p>
-
-      <p class="status" id="statusText">
-        সালামি দিলে ঈদের দাওয়াত confirm! 🍽️
-      </p>
-
     </div>
+
+    <div class="case-box">
+      <p>🐄 <b>অভিযোগ:</b> ঈদের দিন সালামি না দিয়ে চুপ থাকা।</p>
+      <p>⚖️ <b>রায়:</b> দ্রুত bKash এ সালামি পাঠাতে হবে।</p>
+      <p>😜 <b>সতর্কতা:</b> সালামি না দিলে দাওয়াতে শুধু সালাদ!</p>
+    </div>
+
+    <div class="number-box">
+      <div class="number-label">bKash Salami Number</div>
+      <div class="number" id="displayNumber">01XXXXXXXXX</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyNumber()">
+      bKash Number Copy Korun 💸
+    </button>
+
+    <p class="note">
+      এই ওয়েবসাইট থেকে সরাসরি payment হবে না। নম্বর copy করে bKash app থেকে সালামি পাঠাতে হবে।
+    </p>
+
+    <p class="result" id="resultText">
+      সালামি দিলে cow ভাই smile দিবে! 🐮
+    </p>
   </div>
 
   <script>
     // এখানে আপনার আসল bKash number বসান
     const SALAMI_NUMBER = "01608426185";
 
-    const funnyLines = [
-      "সালামি copy হলো, এখন send করার পালা! 😍",
-      "গরু ভাই খুশি, এখন আমিও খুশি হবো! 🐮",
-      "সালামি দিলে ঈদের আনন্দ double হবে! 💚",
-      "দাওয়াত চাইলে আগে সালামি পাঠান! 😜",
-      "কুরবানির ঈদে সালামি না দিলে কিন্তু মন খারাপ! 💸"
+    const cowLines = [
+      "মুউউ... সালামি কই?",
+      "গরু কুরবানি শেষ, এখন সালামি শুরু!",
+      "সালামি দিলে দাওয়াত VIP!",
+      "copy করলেন, এবার send করেন!",
+      "সালামি না দিলে cow ভাই sad!",
+      "ঈদের খুশি + সালামি = perfect combo!"
+    ];
+
+    const successLines = [
+      "Number copied! এখন bKash app এ গিয়ে সালামি পাঠান 😍",
+      "Copy successful! গরু ভাই এখন আশাবাদী ❤️🐮",
+      "সালামির রাস্তা খুলে গেছে! এবার send করার পালা 💸",
+      "bKash number copied! দাওয়াত almost confirm 🍽️",
+      "Copy done! সালামি দিলে ঈদের হাসি double হবে 🦢😄"
     ];
 
     document.getElementById("displayNumber").innerText = SALAMI_NUMBER;
 
+    setInterval(function () {
+      const randomSpeech = cowLines[Math.floor(Math.random() * cowLines.length)];
+      document.getElementById("cowSpeech").innerText = randomSpeech;
+    }, 2500);
+
     function copyNumber() {
-      navigator.clipboard.writeText(SALAMI_NUMBER).then(function () {
-        const randomText = funnyLines[Math.floor(Math.random() * funnyLines.length)];
-        document.getElementById("statusText").innerText = randomText;
-        alert("bKash number copied! এখন bKash app এ গিয়ে সালামি পাঠিয়ে দিন। 😍");
-      }).catch(function () {
-        alert("Copy হয়নি। Number: " + SALAMI_NUMBER);
-      });
+      copyText(SALAMI_NUMBER);
+
+      const randomResult = successLines[Math.floor(Math.random() * successLines.length)];
+      document.getElementById("resultText").innerText = randomResult;
+      document.getElementById("cowSpeech").innerText = "Yay! Salami incoming! 💸";
+
+      makeConfetti();
+      alert("bKash number copied! এখন bKash app থেকে সালামি পাঠিয়ে দিন। 😍");
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand("copy");
+        textArea.remove();
+      }
+    }
+
+    function makeConfetti() {
+      const emojis = ["💸", "🐄", "🌙", "✨", "💚", "🎉"];
+
+      for (let i = 0; i < 22; i++) {
+        const span = document.createElement("span");
+        span.className = "confetti";
+        span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        span.style.left = Math.random() * 100 + "vw";
+        span.style.top = 55 + Math.random() * 25 + "vh";
+        span.style.animationDelay = Math.random() * 0.25 + "s";
+        document.body.appendChild(span);
+
+        setTimeout(function () {
+          span.remove();
+        }, 1400);
+      }
     }
   </script>
 
